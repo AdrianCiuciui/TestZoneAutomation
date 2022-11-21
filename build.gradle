@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'org.testng', name: 'testng', version: '7.6.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.6.0'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
+    testImplementation 'junit:junit:4.13.2'
+
+}
+
+test {
+    useTestNG()
+
+}
