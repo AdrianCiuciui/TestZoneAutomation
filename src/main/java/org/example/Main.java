@@ -1,14 +1,43 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
 
 //        Test1
         String anagramWord = "desperation";
-        String anagramExpression = "a rope ends it";
+        String anagramExpression = "A rope ends it";
         String invalidWord = "desperationn";
         String invalidExpression = "a rope ends i";
+
+
+        String lowerCaseWord = anagramWord.toLowerCase();
+        String lowerCaseExpression = anagramExpression.toLowerCase();
+        String trimmedExpression = lowerCaseExpression.trim();
+
+
+        char[] charAnagram = lowerCaseWord.toCharArray();
+        char[] charExpression = trimmedExpression.toCharArray();
+
+        Arrays.sort(charAnagram);
+        Arrays.sort(charExpression);
+
+
+        boolean bool = Arrays.equals(charAnagram, charExpression);
+        System.out.println("=========== Test #1 ============");
+
+        System.out.println("debug " + Arrays.toString(charAnagram) + " " + Arrays.toString(charExpression));
+
+        System.out.println("The 2 words, " + anagramWord + " and " + anagramExpression + " are: ");
+
+        if (bool) {
+            System.out.println("The same");
+        } else {
+            System.out.println("Not the same");
+        }
+
 
 
 
