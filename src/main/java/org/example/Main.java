@@ -7,30 +7,36 @@ public class Main {
     public static void main(String[] args) {
 
 //        Test1
+        /**
+         * Known issue:
+         *
+         *  cannot remove the spaces. Line 31.
+         */
+
         String anagramWord = "desperation";
         String anagramExpression = "A rope ends it";
-        String invalidWord = "desperationn";
-        String invalidExpression = "a rope ends i";
-
+        String invalidWord = "silent";
+        String invalidExpression = "Listen";
 
         String lowerCaseWord = anagramWord.toLowerCase();
         String lowerCaseExpression = anagramExpression.toLowerCase();
-        String trimmedExpression = lowerCaseExpression.trim();
-
 
         char[] charAnagram = lowerCaseWord.toCharArray();
-        char[] charExpression = trimmedExpression.toCharArray();
+        char[] charExpression = lowerCaseExpression.toCharArray();
 
         Arrays.sort(charAnagram);
         Arrays.sort(charExpression);
 
+        String trimmedExpression = Arrays.toString(charExpression);
+        trimmedExpression = trimmedExpression.strip(); //this doesn't work
+        String stringWord = Arrays.toString(charAnagram);
 
-        boolean bool = Arrays.equals(charAnagram, charExpression);
+        boolean bool = stringWord.equals(trimmedExpression);
         System.out.println("=========== Test #1 ============");
 
-        System.out.println("debug " + Arrays.toString(charAnagram) + " " + Arrays.toString(charExpression));
+        System.out.println("debug " + stringWord + " " + trimmedExpression);
 
-        System.out.println("The 2 words, " + anagramWord + " and " + anagramExpression + " are: ");
+        System.out.println("The 2 words, '" + anagramWord + "' and '" + anagramExpression + "' are: ");
 
         if (bool) {
             System.out.println("The same");
