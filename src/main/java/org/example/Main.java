@@ -33,8 +33,8 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < theDifferences.length; i++) {
-            if (theDifferences[i] == minimumDifference) {
+        for (int theDifference : theDifferences) {
+            if (theDifference == minimumDifference) {
                 System.out.println("======== Test #2 =======\n" +
                         "The minimum distance from the array is: " + minimumDifference +
                         "\nand the position of the index is: " + winningValuePosition);
